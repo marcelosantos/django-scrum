@@ -1,1 +1,1 @@
-web: gunicorn letsdjango.wsgi:application --log-file -
+web: gunicorn letsdjango.wsgi
