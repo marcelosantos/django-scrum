@@ -7,7 +7,6 @@
 
     function ScrumboardController($scope, $http) {
         $scope.add = function (list, title) {
-			console.log(list);
             var card = {
                 list: list.id,
                 title: title
@@ -15,7 +14,7 @@
 
             $http.post('/scrumboard/cards/', card)
                 .then(function (response) {
-					list.cards.push(response.data);
+                    list.cards.push(response.data);
                 },
                 function(){
                     alert('Could not create card');
