@@ -12,6 +12,7 @@
         this.isLoggedIn = isLoggedIn;
         this.logout = logout;
         this.currentUser = currentUser;
+        this.redirectIfNotLoggedIn = redirectIfNotLoggedIn;
 
         function login(username, password) {
             return $http.post(
@@ -44,6 +45,11 @@
                 });
         }
 
+        function redirectIfNotLoggedIn () {
+            if (!isLoggedIn()) {
+                $location.url('/login');
+            }
+        }
 
         function currentUser () {
             if(isLoggedIn()) {

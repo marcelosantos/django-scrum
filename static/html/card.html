@@ -6,6 +6,7 @@
 
 <div class="card" ng-show="edit"
      ng-model-options="modelOptions">
+
     <div class="flex">
         <label><strong>Title:&nbsp;</strong></label>
         <input type="text"
@@ -15,7 +16,7 @@
     <textarea ng-model="card.description"
               ng-change="update()"
               placeholder="Enter description.." ></textarea>
-    
+
     <div class="buttons">
         <span>
             <label>Owner: </label>

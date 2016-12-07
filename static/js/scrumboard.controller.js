@@ -2,10 +2,40 @@
     'use strict';
 
     angular.module('scrumboard.demo')
+
+        .directive('ngEnter', function () {
+            return function (scope, element, attrs) {
+                element.bind("keydown keypress", function (event) {
+
+                if(event.which === 13) {
+                    scope.$apply(function (){
+                    scope.$eval(attrs.ngEnter);
+                });
+                event.preventDefault();
+                }
+            })
+            }
+        })
+
         .controller('ScrumboardController',
                     ['$scope', '$http', '$location', '$routeParams', 'Login', ScrumboardController]);
 
     function ScrumboardController($scope, $http, $location, $routeParams, Login) {
+
+        Login.redirectIfNotLoggedIn();
+        $scope.data = [];
+        $scope.logout = Login.logout;
+        $scope.sortBy = 'story_points';
+        $scope.reverse = true;
+        $scope.showFilters = false;
+
+
+        $http.get('/scrumboard/lists/').then(
+            function (response) {
+                $scope.data = response.data;
+            }
+        );
+
         $scope.add = function (list, title) {
             var card = {
                 list: list.id,

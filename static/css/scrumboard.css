@@ -13,6 +13,7 @@ html {
 }
 
 .list h3 {
+    display: inline;
     padding-left: 7px;
     color: white;
 }
@@ -40,6 +41,7 @@ ul {
 
 .flex {
   display: flex;
+  padding-top: 25px;
 }
 
 .flex input {
@@ -62,25 +64,16 @@ ul {
     resize: vertical;
 }
 
-.logout {
+.logout,
+.show-filters {
     float: right;
-}
-
-#project-name {
-    color: #404040;
-    font-family: sans-serif;
-    margin-left: 21px;
 }
 
 .list-sort {
     color: white;
-    margin: 0px 7px 0px 7px;
-}
-
-.close-delete-inputs {
-    float: right;
+    margin-left: 7px;
 }
 
 select{
-    color: black !important;
+    color: black;
 }

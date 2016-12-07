@@ -1,4 +1,5 @@
-angular.module('scrumboard.demo').config(['$routeProvider',
+angular.module('scrumboard.demo', ['ngRoute'])
+.config(['$routeProvider',
     function config($routeProvider) {
 
         $routeProvider

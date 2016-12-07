@@ -9,10 +9,12 @@
             templateUrl: '/static/html/card.html',
             restrict: 'E',
             controller: ['$scope', '$http', function ($scope, $http) {
+                var url = '/scrumboard/cards/' + $scope.card.id + '/';
+                $scope.destList = $scope.list;
 
                 $scope.update = function () {
                     return $http.put(
-                        $scope.url,
+                        url, //$scope.url,
                         $scope.card
                     );
                 };
@@ -26,7 +28,7 @@
                 }
 
                 $scope.delete = function () {
-                    $http.delete($scope.url).then(
+                    $http.delete(url).then(
                         function(){
                             removeCardFromList($scope.card, $scope.list);
                         }
@@ -57,7 +59,7 @@
                 }
 
 
-                activate();
+                //activate();
                 function activate() {
                     $scope.url = '/scrumboard/cards/' + $scope.card.id + '/';
                     $scope.list = $scope.project.lists.find(function (l) {
