@@ -1,7 +1,12 @@
+v1.0.9 (14/12/2016)
+===================
+## features
+- set a tag responsive page
+
 v1.0.8 (14/12/2016)
 ===================
 ## features
-- definindo a tag title
+- set a tag title
 
 v1.0.7 (14/12/2016)
 ===================
@@ -11,7 +16,7 @@ v1.0.7 (14/12/2016)
 v1.0.6 (06/12/2016)
 ===================
 ## features
-- Aplication
+- application
     - SQLite updates
     - New features
 
