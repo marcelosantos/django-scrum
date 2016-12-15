@@ -1,3 +1,8 @@
+v1.0.7 (14/12/2016)
+===================
+## features
+- improvement layout and organization
+
 v1.0.6 (06/12/2016)
 ===================
 ## features
