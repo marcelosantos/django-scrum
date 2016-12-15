@@ -1,10 +1,43 @@
-<div>
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="collapsed navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-8" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
+                <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand">Django Scrum</a> </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-8">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/#/">Home</a></li>
+                    <li><a href="javascript:void(0);" ng-click="logout()">Logout</a></li>
+                </ul>
+            </div>
+    </div>
+</nav>
+
+<div class="container">
     <h3>Projects for user {{ vm.user.username }}</h3>
-    <ul>
+
+    <div class="card" ng-repeat="project in projects">
+
+        <div class="flex">
+            <h4><strong>Title:&nbsp;</strong> {{ project.name }}</h4>
+        </div>
+
+        <hr class="clear">
+
+        <div>
+            <a class="btn btn-default" href="#/project/{{project.id}}">Show</a>
+        </div>
+
+        <span class="clear">&nbsp</span>
+    </div>
+
+    <!--<ul>
         <li ng-repeat="project in projects">
             <a href="#/project/{{project.id}}">{{ project.name }}</a>
         </li>
-    </ul>
+    </ul>-->
 
     <div ng-show="!projects.length">User has no projects.</div>
 </div>

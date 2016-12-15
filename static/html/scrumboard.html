@@ -1,8 +1,24 @@
-<div class="logout">
-    <button ng-click="logout()">Logout</button>
-</div>
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="collapsed navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-8" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
+                <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand">Django Scrum</a> </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-8">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/#/">Home</a></li>
+                    <li><a href="javascript:void(0);" ng-click="logout()">Logout</a></li>
+                </ul>
+            </div>
+    </div>
+</nav>
+
+<div class="container">
+
 <div class="list" ng-repeat="list in project.lists">
-    <h3>{{ list.name }}</h3>
+    <h3 style="font-size:18px;">{{ list.name }}</h3>
 
     <span class="show-filters">
         <button ng-click="showFilters=!showFilters">
@@ -45,4 +61,6 @@
         <input type="text" ng-model="new_title"/>
         <button ng-enter="add(list, new_title)" ng-click="add(list, new_title)">+</button>
     </div>
+</div>
+
 </div>

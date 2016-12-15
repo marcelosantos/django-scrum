@@ -12,6 +12,7 @@
             }
 
             $scope.user = Login.currentUser();
+            $scope.logout = Login.logout;
 
             $http.get('/scrumboard/projects/')
                 .then(function(response){
